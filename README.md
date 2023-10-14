@@ -9,4 +9,8 @@ Validação de data e hora
 Implementação das listas com as Tasks criadas por usuário.
 Update Tasks
 Update Parcial
-    
+Update Completo
+Validar se a Task pertence ao dono para ser alterada.
+Implementar Try Catch ?? 
+Implementando Exceptions
+Live Reload
