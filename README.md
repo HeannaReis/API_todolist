@@ -6,3 +6,7 @@ Utilização de criptografia BCrypt.
 Enviando paramatro do Filtro para a Controller
 Setando o Id do Usuário para recuperar na Controller
 Validação de data e hora
+Implementação das listas com as Tasks criadas por usuário.
+Update Tasks
+Update Parcial
+    

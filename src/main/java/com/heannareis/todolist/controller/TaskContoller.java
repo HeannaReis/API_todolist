@@ -2,6 +2,7 @@ package com.heannareis.todolist.controller;
 
 import com.heannareis.todolist.domain.model.TaskModel;
 import com.heannareis.todolist.repository.ITaskRepository;
+import com.heannareis.todolist.utils.Utils;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,4 +43,16 @@ public class TaskContoller {
         var tasks = this.taskRepository.findByIdUser((UUID) idUser);
         return tasks;
     }
+    @PutMapping("/{id}")
+    public TaskModel update (@RequestBody TaskModel taskModel, @PathVariable UUID id, HttpServletRequest request){
+        var idUser = request.getAttribute("idUser");
+
+        var task = this.taskRepository.findById(id).orElse(null);
+
+        Utils.copyNonNullProperties(taskModel, task);
+
+        return this.taskRepository.save(task);
+    }
+
+
 }
